@@ -29,26 +29,6 @@
 	<div id='map' class="sidebar-map"></div>
 	<script>
 
-//baseLayers
-
-	//地理院白地図
-	var pal = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
-		attribution: "<a href='http://maps.gsi.go.jp/development/ichiran.html' target='_blank'>国土地理院・地理院タイル</a>"
-	})
-
-	//OpenStreetMap org
-	var osm = L.tileLayer('https://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution: "<a href='http://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap</a> 協力者."
-	})
-
-
-	//地理院写真
-	var ort = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
-		attribution: "<a href='http://maps.gsi.go.jp/development/ichiran.html' target='_blank'>国土地理院・地理院タイル</a>"
-	})
-
-
-//Overlays
 
 	var off1t =new L.KML("img/off1t.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
 	var off1w =new L.KML("img/off1w.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
@@ -56,38 +36,37 @@
 	var off2t =new L.KML("img/off2t.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
 
 
-//mapを生成
-	//標準経緯、許容される拡大率、既定レイヤ
-	var map = L.map('map', {
-		center: [35.36,138.36],
-		minZoom: 4,
-		maxZoom: 18,
-		zoomSnap: 1, //ズームの段階
-		zoom: 8,
-		layers: [pal, off1t, off1w, off2t]
-	});
+		var pal = L.tileLayer('http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',
+		{ attribution: "<a href='http://portal.cyberjapan.jp/help/termsofuse.html' target='_blank'>国土地理院</a>"
+			, minZoom:12
+			, maxZoom:18
+		});
 
-	var baseLayers = {
-		'地理院': pal,
-		'OSM': osm,
-		'写真': ort
+		var ort = L.tileLayer('http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',
+		{ attribution: "<a href='http://portal.cyberjapan.jp/help/termsofuse.html' target='_blank'>国土地理院</a>"
+			, minZoom:12
+			, maxZoom:18
+		});
+
+		//OpenStreetMap org
+		var osm = L.tileLayer('', {
+			attribution: "<a href='http://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap</a> 協力者."
+		})
+
+
+	var baseMaps = {
+		  "地理院" : pal
+		, "OSM" : osm
+		, "写真" : ort
+	};
+	var trekMaps = {
+		  "off1t" : off1t
+		, "off1w" : off1w
+		, "off2t" : off2t
 	};
 
-	var overlays = {
-		"オフ1t": off1t,
-		"オフ1w": off1w,
-		"オフ2t": off2t,
-	};
-
-	//コントローラー、collapsed: falseでUIを畳まない
-	L.control.layers(baseLayers, overlays, {collapsed: true}).addTo(map);
-
-	//表示可能範囲
-	// map.setMaxBounds(new L.LatLngBounds(imageBounds));
-
-	//スケールコントロールを追加、imperial: falseでフィート単位を非表示
-	L.control.scale({imperial: false}).addTo(map);
-
+	var layersGroup = L.layerGroup([off1t,off1w,off2t]);
+	var map = L.map('map', {layers: [pal,layersGroup] })
 
 	var popup = L.popup();
 	map.on('click', function(e) {
@@ -98,6 +77,10 @@
 	    .setContent("" + lat + " , " + lon)
 	    .openOn(map);
 	});
+
+	L.control.layers(baseMaps,trekMaps).addTo(map);
+
+	map.setView([35.36, 138.36],8);
 
 
 </script>
