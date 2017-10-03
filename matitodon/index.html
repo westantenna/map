@@ -23,6 +23,7 @@
 	<style>
 		html, body, #map {height: 100%; width: 100%; margin: 0; padding: 0}
 		.leaflet-popup-content {min-width: 400px !important}
+		.leaflet-popup-content h2 {display: none}
 	</style>
   <title>まちトドン地図</title>
 </head>
@@ -51,7 +52,7 @@
 
 //Overlays
 
-	var off1t =new L.KML("img/photo.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
+	var off1t =new L.KML("img/off1t.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
 	var off1w =new L.KML("img/off1w.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
 
 	var off2t =new L.KML("img/off2t.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });

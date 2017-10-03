@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
 <Style id="PolyStyle1">
   <IconStyle>
@@ -10,8 +10,56 @@
   </IconStyle>
 </Style>
 <Placemark>
+<name>0102</name>
+<description><![CDATA[ <iframe src="https://matitodon.com/@westantenna/72832/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400"></iframe><script src="https://matitodon.com/embed.js" async="async"></script> ]]></description>
+<styleUrl>#PolyStyle1</styleUrl>
+<Point>
+<coordinates>136.8485161231365,35.04877551082197</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>0103</name>
+<description><![CDATA[ <iframe src="https://matitodon.com/@westantenna/72840/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400"></iframe><script src="https://matitodon.com/embed.js" async="async"></script> ]]></description>
+<styleUrl>#PolyStyle1</styleUrl>
+<Point>
+<coordinates>136.8460709707142,35.04983789163464</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>01garden02</name>
+<description><![CDATA[ <iframe src="https://matitodon.com/@TaiseiMiyahara/72712/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400"></iframe><script src="https://matitodon.com/embed.js" async="async"></script> ]]></description>
+<styleUrl>#PolyStyle1</styleUrl>
+<Point>
+<coordinates>136.88286168187915,35.0911531886871</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>01garden01</name>
+<description><![CDATA[ <iframe src="https://matitodon.com/@westantenna/72846/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400"></iframe><script src="https://matitodon.com/embed.js" async="async"></script> ]]></description>
+<styleUrl>#PolyStyle1</styleUrl>
+<Point>
+<coordinates>136.8812308987981,35.091267312313526</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>01_garden03</name>
+<description><![CDATA[ <iframe src="https://matitodon.com/@westantenna/72883/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400"></iframe><script src="https://matitodon.com/embed.js" async="async"></script> ]]></description>
+<styleUrl>#PolyStyle1</styleUrl>
+<Point>
+<coordinates>136.88214284986316,35.09112685244293</coordinates>
+</Point>
+</Placemark>
+<Style id="PolyStyle1">
+  <IconStyle>
+  <Icon>
+  <href>https://maps.gsi.go.jp/portal/sys/v4/symbols/080.png</href>
+  </Icon>
+  <scale>1</scale>
+  </IconStyle>
+</Style>
+<Placemark>
 <name>0101</name>
-<description><![CDATA[ <iframe src="https://matitodon.com/@westantenna/72823/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400"></iframe><script src="https://matitodon.com/embed.js" async="async"></script> ]]></description>
+<description><![CDATA[  <iframe src="https://matitodon.com/@westantenna/72823/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400"></iframe><script src="https://matitodon.com/embed.js" async="async"></script>  ]]></description>
 <styleUrl>#PolyStyle1</styleUrl>
 <Point>
 <coordinates>136.8817949295044,35.169826661097986</coordinates>
