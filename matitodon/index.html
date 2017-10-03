@@ -22,7 +22,7 @@
 
 	<style>
 		html, body, #map {height: 100%; width: 100%; margin: 0; padding: 0}
-		.leaflet-popup-content {min-width: 400px !important}
+		.leaflet-popup-content {min-width: 320px !important; min-height: 320px !important}
 		.leaflet-popup-content h2 {display: none}
 	</style>
   <title>まちトドン地図</title>
@@ -43,12 +43,10 @@
 		attribution: "<a href='http://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap</a> 協力者."
 	})
 
-
 	//地理院写真
-	var ort = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
+	var ort = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg', {
 		attribution: "<a href='http://maps.gsi.go.jp/development/ichiran.html' target='_blank'>国土地理院・地理院タイル</a>"
 	})
-
 
 //Overlays
 
@@ -65,7 +63,7 @@
 		minZoom: 4,
 		maxZoom: 18,
 		zoomSnap: 1, //ズームの段階
-		zoom: 8,
+		zoom: 7,
 		layers: [pal, off1t, off1w, off2t]
 	});
 
