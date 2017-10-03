@@ -31,26 +31,28 @@
 
 
 	var off1t =new L.KML("img/off1t.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
-	var off1w =new L.KML("img/off1w.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
+	var off1w =new L.KML("img/photo.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
 
 	var off2t =new L.KML("img/off2t.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
 
 
-		var pal = L.tileLayer('http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',
+		var pal = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',
 		{ attribution: "<a href='http://portal.cyberjapan.jp/help/termsofuse.html' target='_blank'>国土地理院</a>"
-			, minZoom:12
+			, minZoom:4
 			, maxZoom:18
 		});
 
-		var ort = L.tileLayer('http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',
+		var ort = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',
 		{ attribution: "<a href='http://portal.cyberjapan.jp/help/termsofuse.html' target='_blank'>国土地理院</a>"
-			, minZoom:12
+			, minZoom:4
 			, maxZoom:18
 		});
 
 		//OpenStreetMap org
-		var osm = L.tileLayer('', {
-			attribution: "<a href='http://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap</a> 協力者."
+		var osm = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',
+		{ attribution: "<a href='http://portal.cyberjapan.jp/help/termsofuse.html' target='_blank'>国土地理院</a>"
+			, minZoom:4
+			, maxZoom:18
 		})
 
 
