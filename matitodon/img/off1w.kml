@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+  <name>Waypoints</name>
+  <Style id="Photo">
+    <IconStyle>
+      <scale>1.0</scale>
+      <Icon><href>http://tancro.e-central.tv/grandmaster/marker2/plus-pink.gif</href><gx:w>10</gx:w><gx:h>10</gx:h></Icon>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+  </Style>
+  <Folder><name>PhotoLayer</name>
+
+<Placemark><name></name><styleUrl>#Photo</styleUrl><Point><coordinates>136.882567,36.168573</coordinates></Point><description><![CDATA[ <iframe src="https://matitodon.com/@westantenna/72823/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400"></iframe><script src="https://matitodon.com/embed.js" async="async"></script>  ]]></description></Placemark>
+</Folder></Document></kml>
