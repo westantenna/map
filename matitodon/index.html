@@ -88,6 +88,18 @@
 	//スケールコントロールを追加、imperial: falseでフィート単位を非表示
 	L.control.scale({imperial: false}).addTo(map);
 
+
+	var popup = L.popup();
+	map.on('click', function(e) {
+	  var lat = e.latlng.lat.toFixed(6);
+	  var lon = e.latlng.lng.toFixed(6);
+	  popup
+	    .setLatLng(e.latlng)
+	    .setContent("" + lat + " , " + lon)
+	    .openOn(map);
+	});
+
+
 </script>
 
 <!--
