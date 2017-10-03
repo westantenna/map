@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!-- スマホ向け倍率 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no ,minimal-ui">
+	<!-- iOS向け -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!-- Android向け -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<!-- アプリマニフェスト -->
+<!--	<link rel="manifest" href="manifest.json">
+	<link href="img/home_icon.png" rel="apple-touch-icon-precomposed">
+-->
+
+	<!-- leaflet.jsライブラリ -->
+	<script src="../leaflet/leaflet.js"></script>
+	<link rel="stylesheet" href="../leaflet/leaflet.css" />
+
+	<!-- leaflet plugin kml.js -->
+	<script src="../leaflet-plugins/layer/vector/KML.js"></script>
+
+	<style>
+		html, body, #map {height: 100%; width: 100%; margin: 0; padding: 0}
+	</style>
+  <title>まちトドン地図</title>
+</head>
+<body>
+	<div id='map' class="sidebar-map"></div>
+	<script>
+
+//baseLayers
+
+	//地理院白地図
+	var pal = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
+		attribution: "<a href='http://maps.gsi.go.jp/development/ichiran.html' target='_blank'>国土地理院・地理院タイル</a>"
+	})
+
+	//OpenStreetMap org
+	var osm = L.tileLayer('https://b.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: "<a href='http://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap</a> 協力者."
+	})
+
+
+	//地理院写真
+	var ort = L.tileLayer('https://westantenna.github.io/tms/kana/img/test/{z}/{x}/{y}.png', {
+//	var ort = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg', {
+		attribution: "<a href='http://maps.gsi.go.jp/development/ichiran.html' target='_blank'>国土地理院・地理院タイル</a>"
+	})
+
+
+//Overlays
+
+	var off1t =new L.KML("img/off1t.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
+
+	var off2t =new L.KML("img/off2t.kml", {async: false}).on("loaded", function(e) { map.fitBounds(e.target.getBounds()); });
+
+
+//mapを生成
+	//標準経緯、許容される拡大率、既定レイヤ
+	var map = L.map('map', { center: [35.36,138.36], zoom: 7,layers: [tram] });
+
+	var baseLayers = {
+		'地理院': pal,
+		'OSM': osm,
+		'写真': ort
+	};
+
+	var overlays = {
+		"オフ1": off1t,
+		"オフ2": off2t,
+	};
+
+	//コントローラー
+	//3つめ、collapsed: falseでUIを消す
+	//2つめ、いらない場合はfalse
+	L.control.layers(baseLayers, overlays, {collapsed: false}).addTo([pal, off1t]);
+//	L.control.layers(baseLayers, overlays, {collapsed: false}).addTo(map);
+
+	//表示可能範囲
+	// map.setMaxBounds(new L.LatLngBounds(imageBounds));
+
+	//スケールコントロールを追加（オプションはフィート単位を非表示）
+	L.control.scale({imperial: false}).addTo(map);
+
+</script>
+
+<!--
+<script>
+window.addEventListener('load', function() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register("serviceWorker.js")
+      .then(function(registration) {
+        console.log("serviceWorker registed.");
+      }).catch(function(error) {
+        console.warn("serviceWorker error.", error);
+      });
+  }
+});
+</script>
+-->
+
+</body>
+</html>
