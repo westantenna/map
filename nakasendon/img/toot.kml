@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Style id="PolyStyle1">
+  <IconStyle>
+  <Icon>
+  <href>https://maps.gsi.go.jp/portal/sys/v4/symbols/080.png</href>
+  </Icon>
+  <scale>1</scale>
+  </IconStyle>
+</Style>
+<Placemark>
+<name>桃介橋</name>
+<description><![CDATA[ <iframe src="https://nakasendon.m.to/@nakasendon/192610/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400"></iframe><script src="https://matitodon.com/embed.js" async="async"></script> ]]></description>
+<styleUrl>#PolyStyle1</styleUrl>
+<Point>
+<coordinates>137.6068626, 35.6008427</coordinates>
+</Point>
+</Placemark>
+
+<Placemark>
+<name>博物館明治村</name>
+<description><![CDATA[ <iframe src="https://nakasendon.m.to/@nakasendon/201165/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400"></iframe><script src="https://matitodon.com/embed.js" async="async"></script> ]]></description>
+<styleUrl>#PolyStyle1</styleUrl>
+<Point>
+<coordinates>136.9897884, 35.3435076</coordinates>
+</Point>
+</Placemark>
+
+
+<Style id="PolyStyle1">
+  <IconStyle>
+  <Icon>
+  <href>https://maps.gsi.go.jp/portal/sys/v4/symbols/080.png</href>
+  </Icon>
+  <scale>1</scale>
+  </IconStyle>
+</Style>
+<Placemark>
+<name>0101</name>
+<description><![CDATA[  <iframe src="https://matitodon.com/@westantenna/72823/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400"></iframe><script src="https://matitodon.com/embed.js" async="async"></script>  ]]></description>
+<styleUrl>#PolyStyle1</styleUrl>
+<Point>
+<coordinates>136.8817949295044,35.169826661097986</coordinates>
+</Point>
+</Placemark>
+</Document>
+</kml>

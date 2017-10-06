@@ -1,0 +1,14 @@
+{
+	"short_name": "横浜路線図",
+	"name": "横浜広域路線図",
+	"icons": [
+		{
+		"src": "img/home_icon.png",
+		"sizes": "192x192",
+		"type": "image/png"
+		}
+	],
+	"start_url": "https://westantenna.github.io/tms/kana/",
+	"display": "standalone",
+	"theme_color": "#134763"
+}
